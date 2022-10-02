@@ -75,7 +75,7 @@ while($row=mysqli_fetch_array($query))
                                             <td><?php echo htmlentities($cnt);?></td>
                                             <td><?php echo htmlentities($row['categoryName']);?></td>
                                             <td> <?php echo htmlentities($row['creationDate']);?></td>
-                                            <td>
+                                            <td class="cent">
                                             <a href="edit-category.php?id=<?php echo $row['id']?>"><i class="fas fa-edit"></i></a> | 
                                             <a href="manage-categories.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         </tr>

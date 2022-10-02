@@ -3,30 +3,18 @@ include_once('includes/config.php');
 if(strlen( $_SESSION["edmsid"])==0)
 {   header('location:logout.php');
 } else {
-
+//For Adding categories
 if(isset($_POST['submit']))
 {
-    $category=$_POST['category'];
-    $ntitle=$_POST['notetitle'];
-    $ndescription=$_POST['notediscription'];
-    $createdby=$_SESSION['edmsid'];
+$category=$_POST['category'];
+$createdby=$_SESSION["edmsid"];
+$sql=mysqli_query($con,"insert into tblcategory(categoryName,createdBy) values('$category',$createdby)");
+echo "<script>alert('Category added successfully');</script>";
+echo "<script>window.location.href='manage-categories.php'</script>";
 
-$sql=mysqli_query($con,"insert into tblnotes(noteCategory,noteTitle,noteDescription,createdBy) values('$category','$ntitle','$ndescription','$createdby')");
-echo "<script>alert('Note Added  successfully');</script>";
-echo "<script>window.location.href='manage-notes.php'</script>";
 }
 
-
-
-
-
-
-
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +28,6 @@ echo "<script>window.location.href='manage-notes.php'</script>";
        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-  
-
     </head>
     <body>
    <?php include_once('includes/header.php');?>
@@ -50,58 +36,31 @@ echo "<script>window.location.href='manage-notes.php'</script>";
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Add Note</h1>
+                        <h1 class="mt-4">Add Category</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Add Note</li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Add Category</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-<form  method="post" enctype="multipart/form-data">                                
+<form  method="post">                                
 <div class="row">
 <div class="col-3">Category Name</div>
-<div class="col-9">
-<select name="category" id="category" class="form-control" required>
-<option value="">Select Category</option> 
-<?php $userid=$_SESSION["edmsid"];
-$query=mysqli_query($con,"select * from tblcategory where createdBy='$userid'");
-while($row=mysqli_fetch_array($query))
-{?>
-
-<option value="<?php echo $row['categoryName'];?>"><?php echo $row['categoryName'];?></option>
-<?php } ?>
-</select>    
-</div>
+<div class="col-9"><input type="text" placeholder="Enter category Name"  name="category" class="form-control" required></div>
 </div>
 
-
-<div class="row" style="margin-top:1%;">
-<div class="col-3">Note Title</div>
-<div class="col-9"><input type="text" name="notetitle" placeholder="Enter the note title" class="form-control"></textarea>
-</div>
-</div>
-
-<div class="row" style="margin-top:1%;">
-<div class="col-3">Note Description</div>
-<div class="col-9"><textarea  name="notediscription"  placeholder="Enter Note Description" rows="6" class="form-control"></textarea>
-</div>
-</div>
-
-
-
-<div class="row" style="margin-top:1%">
-<div class="col-12">&nbsp;</div>
-<div class="col-12" align="right"><button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
+<br>
+<div class="row">
+<div class="col-12"align="right"><button  type="submit" name="submit" class="btn btn-primary">Submit</button></div>
 </div>
 
 </form>
                             </div>
                         </div>
                     </div>
-
-                </main>       
+                </main>
           <?php include_once('includes/footer.php');?>
-     </div>
+            </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
@@ -110,5 +69,6 @@ while($row=mysqli_fetch_array($query))
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+    </body>
 </html>
 <?php }  ?>

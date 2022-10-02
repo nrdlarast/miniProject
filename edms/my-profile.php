@@ -53,35 +53,35 @@ while($row=mysqli_fetch_array($query))
 <form  method="post">                                
 <div class="row">
 <div class="col-3">First name</div>
-<div class="col-4"><input type="text" value="<?php echo  htmlentities($row['firstName']);?>"  name="fname" class="form-control" required></div>
+<div class="col-9"><input type="text" value="<?php echo  htmlentities($row['firstName']);?>"  name="fname" class="form-control" required></div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-3">Last Name</div>
-<div class="col-4"><input type="text" value="<?php echo  htmlentities($row['lastName']);?>"  name="lname" class="form-control" required></div>
+<div class="col-9"><input type="text" value="<?php echo  htmlentities($row['lastName']);?>"  name="lname" class="form-control" required></div>
 </div>
 
 
 
 <div class="row" style="margin-top:1%;">
 <div class="col-3">Email id</div>
-<div class="col-4"><input type="text" value="<?php echo  htmlentities($row['emailId']);?>"  name="emailid" class="form-control" readonly></div>
+<div class="col-9"><input type="text" value="<?php echo  htmlentities($row['emailId']);?>"  name="emailid" class="form-control" readonly></div>
 </div>
 
 
 <div class="row" style="margin-top:1%;">
 <div class="col-3">Mobile Number</div>
-<div class="col-4"><input type="text" value="<?php echo  htmlentities($row['mobileNumber']);?>"  name="mobileno" class="form-control" readonly></div>
+<div class="col-9"><input type="text" value="<?php echo  htmlentities($row['mobileNumber']);?>"  name="mobileno" class="form-control" readonly></div>
 </div>
 
 <div class="row" style="margin-top:1%;">
 <div class="col-3">Reg. Date</div>
-<div class="col-4"><input type="text" value="<?php echo  htmlentities($row['regDate']);?>"  name="regdate" class="form-control" readonly></div>
+<div class="col-9"><input type="text" value="<?php echo  htmlentities($row['regDate']);?>"  name="regdate" class="form-control" readonly></div>
 </div>
 
-
+<br>
 <div class="row" style="margin-top:1%;">
-<div class="col-7" align="center"><button type="submit" name="submit" class="btn btn-primary">Update</button></div>
+<div class="col-12" align="right"><button type="submit" name="submit" class="btn btn-primary">Update</button></div>
 </div>
 
 </form>
