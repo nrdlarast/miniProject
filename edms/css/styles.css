@@ -147,12 +147,27 @@ h4, .h4 {
   }
 }
 
+.col.colog {
+  background-color: rgb(233, 233, 233);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.colog {
+  border-radius: 20px;
+}
+
 h5, .h5 {
   font-size: 1.25rem;
 }
 
 h6, .h6 {
   font-size: 1rem;
+}
+
+.colog{
+  background-color: #fd7e14;
+  padding: 20px;
 }
 
 p {

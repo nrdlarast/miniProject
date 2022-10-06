@@ -22,6 +22,9 @@
         }
         .bg {
             background-image: url("assets/img/bg.jpg");
+            /* background-color: rgb(233, 233, 233); */
+            
+            /* background-color: white; */
 
             filter: blur(6px);
             -webkit-filter: blur(6px);
@@ -40,6 +43,17 @@
             transform: translate(-50%, -50%);
             text-align: center;
         }
+        .col.colog {
+            background-color: white;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+
+        }
+        .colog {
+            border-radius: 20px;
+        }
 
     </style>
 
@@ -50,20 +64,52 @@
 
 <div class="bg"></div>
 <div class="container">
-    <div class="card" style="box-shadow: #6c757d">
-        <div class="card-header">
+    <div class="" style="box-shadow: #6c757d">
+        <!-- <div class="card-header">
             <h1 class="text-center">Diary</h1>
-        </div>
-        <div class="card-body">
+        </div> -->
+        <!-- <div class="card-body"> -->
+        <div class="">
             <div class="row text-center">
-                <div class="col-md-6">
-                    <a href="login.php" class="btn btn-primary btn-block">Login</a>
+            <div class="row">
+                <div class="col colog">
+                <a href="login.php" class="">
+                    <img src="assets/img/log.jpg" style="width: 442.43px;height: 380px; padding-bottom: 20px;">
+                    <h1>LOGIN</h1>
+                </a>
                 </div>
-                <div class="col-md-6">
-                    <a href="registration.php" class="btn btn-success btn-block">Register</a>
+
+                <div class="col-1">
+                </div>
+
+                <!-- <div class="col colog">
+                <a href="register.php" class="btn btn-primary btn-block">Register</a>
+                </div> -->
+                <div class="col colog">
+                <a href="register.php" class="">
+                    <img src="assets/img/reg.jpg" style="width: 493.96px;height: 380px; padding-bottom: 20px;">
+                    <h1>REGISTER</h1>
+                </a>
                 </div>
             </div>
+                <!-- <div class="col-md-12"> -->
+                <!-- <div class="col-12">
+                    <a href="login.php" class="btn btn-primary btn-block">Login</a>
+                </div> -->
+                <!-- <div class="col-md-12"> -->
+                <!-- <div class="col-12">
+                    <a href="login.php" class="btn btn-primary btn-block">Register</a>
+                </div> -->
+            <!-- </div> -->
         </div>
+
+        <!-- <div class="card-body">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <a href="login.php" class="btn btn-primary btn-block">Register</a>
+                </div>
+            </div>
+        </div> -->
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
